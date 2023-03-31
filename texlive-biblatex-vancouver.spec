@@ -1,6 +1,6 @@
 Name:		texlive-biblatex-vancouver
 Version:	55339
-Release:	1
+Release:	2
 Summary:	Vancouver style for BibLaTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/biblatex-vancouver
