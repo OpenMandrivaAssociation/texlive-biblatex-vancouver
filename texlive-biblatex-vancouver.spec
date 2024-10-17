@@ -3,7 +3,7 @@ Version:	55339
 Release:	2
 Summary:	Vancouver style for BibLaTeX
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/biblatex-vancouver
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/biblatex-vancouver
 License:	gpl3+
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/biblatex-vancouver.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/biblatex-vancouver.doc.r%{version}.tar.xz
