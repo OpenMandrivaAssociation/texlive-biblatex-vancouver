@@ -1,36 +1,23 @@
-Name:		texlive-biblatex-vancouver
-Version:	55339
-Release:	2
+%global tl_name biblatex-vancouver
+%global tl_revision 75301
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.1
+Release:	%{tl_revision}.1
 Summary:	Vancouver style for BibLaTeX
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/biblatex-vancouver
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/biblatex-contrib/biblatex-vancouver
 License:	gpl3+
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/biblatex-vancouver.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/biblatex-vancouver.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/biblatex-vancouver.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/biblatex-vancouver.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package provides the Vancouver reference style for
-BibLaTeX. It is based on the numeric style and requires biber.
+This package provides the Vancouver reference style for BibLaTeX. It is
+based on the numeric style and requires biber.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/biblatex-vancouver
-%doc %{_texmfdistdir}/doc/latex/biblatex-vancouver
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
